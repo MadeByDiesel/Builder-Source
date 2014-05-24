@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523065635) do
+ActiveRecord::Schema.define(version: 20140524021357) do
 
   create_table "posters", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20140523065635) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "company_name"
+    t.string   "user_type"
+    t.string   "contact_person"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
   end
 
   add_index "posters", ["email"], name: "index_posters_on_email", unique: true
@@ -44,6 +53,17 @@ ActiveRecord::Schema.define(version: 20140523065635) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "company_name"
+    t.string   "company_type"
+    t.string   "contact_person"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "website"
+    t.text     "description"
   end
 
   add_index "providers", ["email"], name: "index_providers_on_email", unique: true

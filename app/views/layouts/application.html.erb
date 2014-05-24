@@ -18,6 +18,7 @@
   <%= render 'layouts/header' %>
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
+      <a class="close" data-dismiss="alert" href="#">x</a>
     <% end %>
 
     <%= yield %>
