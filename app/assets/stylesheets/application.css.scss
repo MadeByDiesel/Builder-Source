@@ -10,11 +10,69 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require rails_bootstrap_forms
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap";
+
+$headerBlue: #468CCA;
 
 body {
   margin-top: 50px;
+}
+
+.navbar-inverse{
+  background-color: $headerBlue;
+  border-color: $headerBlue;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, 
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #cccccc;
+}
+
+.devise-form {
+  margin-top: 150px;
+  margin-bottom: 250px;
+}
+
+.signup {
+  margin-top: 150px;
+  margin-bottom: 250px;
+}
+
+.signup-box {
+  background-color: #ffffff;
+  border-radius: 6px;
+  height: 150px;
+  width: 45%;
+  margin-left: 25px;
+}
+
+h2.text-center {
+padding: 0;
+margin-bottom: 40px;
+}
+
+.btn-wide {
+  width: 100%
+}
+
+.checkbox {
+  text-align: center;
+}
+
+.shared-links {
+  margin-top: 10px;
+
 }
