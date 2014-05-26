@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   root to: "static_pages#index"
   get "static_pages/index"
+  get "signup", to: "static_pages#sign_up"
 
   devise_for :providers
   devise_for :posters

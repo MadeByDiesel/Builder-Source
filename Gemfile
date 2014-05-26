@@ -10,10 +10,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
-
+gem 'bootstrap_form'
 
 group :development do
-  gem 'spring'
+  #gem 'spring'
   gem 'sqlite3'
   gem 'better_errors'
 end

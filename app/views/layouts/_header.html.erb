@@ -10,6 +10,10 @@
       <%= link_to 'Builder Source', root_path, class: "navbar-brand"  %>
     </div>
     <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Sign Up", signup_path %></li>
+      <li><%= link_to "Log In", new_poster_session_path %></li>
+      </ul>
       <!--
       <form class="navbar-form navbar-right" role="form">
         <div class="form-group">
