@@ -11,7 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527202006) do
+ActiveRecord::Schema.define(version: 20140602003424) do
+
+  create_table "contractors", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "username"
+    t.string   "company_name"
+    t.string   "company_type"
+    t.string   "contact_person"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "website"
+    t.text     "description"
+  end
+
+  add_index "contractors", ["email"], name: "index_contractors_on_email", unique: true
+  add_index "contractors", ["reset_password_token"], name: "index_contractors_on_reset_password_token", unique: true
+
+  create_table "jobs", force: true do |t|
+    t.string   "jobname"
+    t.text     "description"
+    t.integer  "poster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posters", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -39,53 +76,5 @@ ActiveRecord::Schema.define(version: 20140527202006) do
 
   add_index "posters", ["email"], name: "index_posters_on_email", unique: true
   add_index "posters", ["reset_password_token"], name: "index_posters_on_reset_password_token", unique: true
-
-  create_table "providers", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "username"
-    t.string   "company_name"
-    t.string   "company_type"
-    t.string   "contact_person"
-    t.string   "phone"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.string   "website"
-    t.text     "description"
-  end
-
-  add_index "providers", ["email"], name: "index_providers_on_email", unique: true
-  add_index "providers", ["reset_password_token"], name: "index_providers_on_reset_password_token", unique: true
-
-  create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
