@@ -1,0 +1,34 @@
+<div class="container devise-form">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Job Poster: <%= @poster.username %></h1>
+      <p><%= link_to "Create New Job Listing", new_job_path(@poster), class: "btn btn-primary btn-link" %></p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Job Name:</th>
+            <th>Description:</th>
+            <th>Posted by:</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @jobs.each do |job| %>
+            <tr>
+              <td><%= job.jobname %></td>
+              <td><%= job.description %></td>
+              <td><%= job.poster.username%></td>
+              <td><%= link_to 'Show', job %></td>
+              <% if poster_signed_in? %>
+              <td><%= link_to 'Edit', edit_job_path(job) %></td>
+              <td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

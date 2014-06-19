@@ -1,64 +1,25 @@
 Rails.application.routes.draw do
-  
-  root to: "static_pages#index"
-  get "static_pages/index"
-  get "signup", to: "static_pages#sign_up"
 
-  devise_for :providers
+  root to: 'static_pages#index'
+
+  get 'static_pages/index'
+  get 'sign_up', to: 'static_pages#sign_up'
+
   devise_for :posters
+  devise_for :contractors
+  
+  #devise_scope :contractor do
+  #  get 'sign_in', to: 'devise/sessions#new'
+  #end
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  #devise_scope :poster do
+  #  get 'sign_in', to: 'devise/sessions#new'
+  #end
 
-  # You can have the root of your site routed with "root"
-  #root 'welcome#index'
+  resources :posters
+  resources :contractors
+  resources :jobs
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  #get 'contractor/:id' => 'contractors#show', as: :contractor
+  #get 'poster/:id' => 'posters#show', as: :poster
 end

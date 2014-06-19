@@ -1,6 +1,6 @@
-class DeviseCreateProviders < ActiveRecord::Migration
+class DeviseCreateContractors < ActiveRecord::Migration
   def change
-    create_table(:providers) do |t|
+    create_table(:contractors) do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -34,9 +34,9 @@ class DeviseCreateProviders < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :providers, :email,                unique: true
-    add_index :providers, :reset_password_token, unique: true
-    # add_index :providers, :confirmation_token,   unique: true
-    # add_index :providers, :unlock_token,         unique: true
+    add_index :contractors, :email,                unique: true
+    add_index :contractors, :reset_password_token, unique: true
+    # add_index :contractors, :confirmation_token,   unique: true
+    # add_index :contractors, :unlock_token,         unique: true
   end
 end
