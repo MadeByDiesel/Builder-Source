@@ -1,4 +1,4 @@
-<%= form_for(@job) do |f| %>
+<%= bootstrap_form_for(@job) do |f| %>
   <% if @job.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
@@ -11,7 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.text_field :jobname %>
+    <%= f.number_field :budget %>
+    <%= f.text_field :type_work %>
+    <%= f.text_field :action_stage %>
+    <%= f.text_field :status %>
+    <%= f.text_area :description %>
+  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.primary "Save Job Listing" %>
   </div>
 <% end %>

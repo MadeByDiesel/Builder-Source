@@ -6,15 +6,16 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :username
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit!}
   end
 
-  private
-    # Overwriting the sign_out redirect path method
-    def after_sign_in_path_for(user)
-      if contractor_signed_in?
-        contractor_url(user)
-      else poster_signed_in?
-        poster_url(user)
-      end
+  # Overwriting the sign_out redirect path method
+  def after_sign_in_path_for(resource)
+    if contractor_signed_in?
+      contractor_url(resource)
+    else poster_signed_in?
+      poster_url(resource)
     end
+  end
+
 end

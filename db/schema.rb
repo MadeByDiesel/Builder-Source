@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602003424) do
+ActiveRecord::Schema.define(version: 20140618213028) do
 
   create_table "contractors", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -44,6 +44,10 @@ ActiveRecord::Schema.define(version: 20140602003424) do
 
   create_table "jobs", force: true do |t|
     t.string   "jobname"
+    t.integer  "budget"
+    t.string   "type_work"
+    t.string   "action_stage"
+    t.string   "status"
     t.text     "description"
     t.integer  "poster_id"
     t.datetime "created_at"

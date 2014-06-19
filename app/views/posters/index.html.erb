@@ -1,7 +1,27 @@
 <div class="container devise-form">
   <div class="row">
     <div class="col-md-12">
-      <h1>Job Poster: <%= @poster.username %></h1>
+      <h1>Job Posters:</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Job Name:</th>
+            <th>Description:</th>
+            <th>Posted by:</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @posters.each do |poster| %>
+            <tr>
+              <td><%= poster.username %></td>
+              <td><%= link_to 'Show', poster %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

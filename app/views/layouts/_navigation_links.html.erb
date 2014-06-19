@@ -1,4 +1,5 @@
 <% if poster_signed_in? %>
+  <li><%= link_to 'Dashboard', current_poster %></li>
   <li><%= link_to 'Edit profile', edit_poster_registration_path %></li>
   <li><%= link_to "Logout", destroy_poster_session_path, method: :delete %></li>
 <% elsif contractor_signed_in? %>
@@ -6,7 +7,7 @@
   <li><%= link_to "Logout", destroy_contractor_session_path, method: :delete %></li>
 
 <% else %>
-  <li><%= link_to "Sign Up", signup_path %></li>
+  <li><%= link_to "Sign Up", sign_up_path %></li>
   <li><%= link_to "Job Poster Log In", new_poster_session_path %></li>
   <li><%= link_to "Contractor Log In", new_contractor_session_path %></li>
 <% end %>
