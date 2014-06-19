@@ -1,4 +1,4 @@
-class AddDetailsToPosters < ActiveRecord::Migration
+class AddDetailsToPoster < ActiveRecord::Migration
   def change
     add_column :posters, :username, :string
     add_column :posters, :company_name, :string
